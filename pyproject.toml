@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.13"
+name = "cs_238"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = ["ipython>=9.6.0", "kedro>=1.0.0", "notebook>=7.4.7"]
+
+[project.scripts]
+cs-238 = "cs_238.__main__:main"
+
+[tool.kedro]
+package_name = "cs_238"
+project_name = "CS 238"
+kedro_init_version = "1.0.0"
+tools = "['Custom Logging', 'Data Structure']"
+example_pipeline = "False"
+source_dir = "src"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.version]
+attr = "cs_238.__version__"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+# show-fixes = true
+select = ["ALL"]
+ignore = [
+    "ANN401",
+    "COM812",
+    "D103",
+    "D104",
+    "D200",
+    "D203",
+    "D205",
+    "D212",
+    "D400",
+    "D404",
+    "D415",
+    "ERA001",
+    "S101",
+    "TC002",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.14.2"]
