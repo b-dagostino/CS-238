@@ -37,7 +37,7 @@ loggers:
     level: INFO
 
   cs_238:
-    level: INFO
+    level: DEBUG
 
 root:
   handlers: [rich, info_file_handler]

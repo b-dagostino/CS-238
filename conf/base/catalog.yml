@@ -2,3 +2,26 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+raw_alarms:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/ChargePointAlarmDataItem.csv
+  load_args:
+    dtype: object
+
+
+raw_charging_sessions:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/ChargePointChargingSessionDataItem.csv
+  load_args:
+    dtype: object
+
+raw_station_overviews:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/ChargePointStationOverviewDataItem.csv
+  load_args:
+    dtype: object
+
+"clean_{name}":
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/clean_{name}.parquet

@@ -3,3 +3,91 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/1.0.0/configuration/parameters.html
+
+data_loader:
+  alarms:
+    drop_columns:
+      - Display Name
+      - MAC Address
+      - Org Name
+      - Alarm ID
+      - Model Number
+      - Reason For Clearing
+      - Alarm Timestamp
+    datetime_columns:
+      - Data Timestamp
+  charging_sessions:
+      drop_columns:
+        - Station Name
+        - MAC Address
+        - Org Name
+        - Start Date
+        - Start Time Zone
+        - End Date
+        - End Time Zone
+        - Transaction Date (Pacific Time)
+        - GHG Savings (kg)
+        - Gasoline Savings (gallons)
+        - EVSE ID
+        - Address 1
+        - Address 2
+        - City
+        - State/Province
+        - Zip/Postal Code
+        - Country
+        - Latitude
+        - Longitude
+        - Currency
+        - Fee
+        - Plug In Event ID
+        - Transaction ID
+        - Driver Zip/Postal Code
+        - User ID
+        - Start SOC
+        - End SOC
+        - County
+        - Model Number
+      datetime_columns:
+        - Start Timestamp
+        - End Timestamp
+        - Data Timestamp
+  station_overviews:
+      drop_columns:
+        - Model Number
+        - Station Name
+        - Org Name
+        - MAC Address
+        - Address 1
+        - Address 2
+        - Floor Label
+        - City
+        - State
+        - Zip/Postal Code
+        - County
+        - "Country "
+        - Activation Status
+        - Pricing Policy Name
+        - Reservations
+        - Usable By
+        - Visibility (Access Policy Name)
+        - EVSE ID
+        - Radio Group Name
+        - Software Version
+        - Customer Category
+        - Customer Subcategory
+        - Currency Name
+        - Power Select / AC Breaker Rating
+        - Warranty Type
+        - Warranty Expiration Date
+        - Warranty Service
+        - Device Access Restriction
+        - Asset Tag ID
+        - Meter ID
+        - Customer Name
+        - Customer ID
+        - Site Validation Status
+        - Paired
+        - Latitude
+        - Longitude
+      datetime_columns:
+        - Data Timestamp

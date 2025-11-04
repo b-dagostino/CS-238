@@ -7,7 +7,16 @@ requires-python = ">=3.13"
 name = "cs_238"
 readme = "README.md"
 dynamic = ["version"]
-dependencies = ["ipython>=9.6.0", "kedro>=1.0.0", "notebook>=7.4.7"]
+dependencies = [
+    "ipython>=8.37.0",
+    "kedro>=1.0.0",
+    "kedro-datasets>=8.1.0",
+    "kedro-viz>=2.1.1",
+    "notebook>=7.4.7",
+    "pandas>=2.3.3",
+    "pyarrow>=22.0.0",
+    "pydantic>=2.12.3",
+]
 
 [project.scripts]
 cs-238 = "cs_238.__main__:main"
