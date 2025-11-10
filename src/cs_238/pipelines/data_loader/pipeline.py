@@ -3,11 +3,12 @@ This is a boilerplate pipeline 'data_loader'
 generated using Kedro 1.0.0
 """
 
+from functools import partial
 from typing import Any
 
 from kedro.pipeline import Node, Pipeline
 
-from .nodes import clean
+from .nodes import clean, discrete_category_mapper
 
 
 def create_pipeline(**kwargs: Any) -> Pipeline:

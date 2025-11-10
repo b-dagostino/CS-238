@@ -49,3 +49,9 @@ def clean(raw: pd.DataFrame, clean_params: Mapping) -> pd.DataFrame:
         cleaned = cleaned.reset_index(drop=True)
 
     return cleaned
+
+
+def discrete_category_mapper(df: pd.DataFrame, column: str) -> pd.DataFrame:
+    unique_categories = df[column].dropna().unique()
+    category_to_int = {category: idx + 1 for idx, category in enumerate(unique_categories)}
+    return pd.Series(category_to_int).to_frame()
