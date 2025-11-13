@@ -66,3 +66,6 @@ ignore = [
 
 [dependency-groups]
 dev = ["ruff>=0.14.2"]
+
+[tool.kedro_telemetry]
+project_id = "e07a8f672d0046e6994d1b29c00769cc"
