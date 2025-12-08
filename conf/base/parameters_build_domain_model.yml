@@ -3,3 +3,52 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/1.0.0/configuration/parameters.html
+value-replacer:
+  alarms:
+    Fault:
+      - CHAdeMO control loop detected fault (39)
+      - Charger Fault - contact Tritium (28)
+      - Data Partition Full
+      - Earth Fault Station In Service
+      - Earth Fault Station Out Of Service
+      - FCheck Error
+      - GFCI Hard Trip
+      - GFCI Soft Trip
+      - Hardware Fault Station Out Of Service
+      - Hardware Fault
+      - Maintenance Required
+      - Over Current Hard Trip Detected
+      - Pilot current level exceeded
+      - Pilot Unreachable (18)
+      - Relay Stuck Close
+      - RFID Update Failed
+      - Emergency Stop button pressed - No circuit breaker Trip fired (Soft E-Stop) (188)
+      - Tamper Detect
+      - Vehicle fault (50)
+      - Ventilation Fault
+    Fault-Cleared:
+      - Fault Cleared
+    Boot:
+      - Boot up
+      - Bootup Due to POWER ON
+      - Bootup Due to SOFT RESET
+      - Bootup Due to SWITCH
+      - Bootup Due to WATCHDOG
+    Shutdown:
+      - Powered Off
+    Network-Lost:
+      - Communication timeout. (62)
+      - Communication timeout. (63)
+      - Unreachable
+      - EVSE Unreachable
+    Network-Restored:
+      - Reachable
+    "~7fff":
+      - "7fff "
+  station-status:
+    Available:
+      - Occupied
+  network-status:
+    "⊥":
+      - "-"
+  

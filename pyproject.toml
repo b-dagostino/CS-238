@@ -8,12 +8,14 @@ name = "cs_238"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [
+    "hmmlearn>=0.3.3",
     "ipython>=8.37.0",
     "kedro>=1.0.0",
     "kedro-datasets>=8.1.0",
     "kedro-viz>=2.1.1",
     "notebook>=7.4.7",
     "pandas>=2.3.3",
+    "pomegranate>=1.1.2",
     "pyarrow>=22.0.0",
     "pydantic>=2.12.3",
 ]

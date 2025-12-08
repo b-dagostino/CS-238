@@ -51,7 +51,15 @@ def clean(raw: pd.DataFrame, clean_params: Mapping) -> pd.DataFrame:
     return cleaned
 
 
-def discrete_category_mapper(df: pd.DataFrame, column: str) -> pd.DataFrame:
-    unique_categories = df[column].dropna().unique()
-    category_to_int = {category: idx + 1 for idx, category in enumerate(unique_categories)}
-    return pd.Series(category_to_int).to_frame()
+def fix_station_overview(df: pd.DataFrame) -> pd.DataFrame:
+    # Remove trailing .0 from System S/N values
+    df["System S/N"] = df["System S/N"].astype(str).str.replace(r"\.0$", "", regex=True)
+
+    # Drop "nan" string entries in System S/N column
+    df = df[df["System S/N"] != "nan"].reset_index(drop=True)
+    return df
+
+
+def prune_alarms(alarms_df: pd.DataFrame, station_overviews_df: pd.DataFrame) -> pd.DataFrame:
+    """Prune all alarms before earliest station overview."""
+    return alarms_df[alarms_df["Data Timestamp"] >= station_overviews_df["Data Timestamp"].min()]
